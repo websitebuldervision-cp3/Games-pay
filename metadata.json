@@ -1,0 +1,6 @@
+{
+  "name": "GAMES PAY",
+  "description": "GAMES PAY — Premium Gaming Rewards Platform. Cheza magemu na upokee zawadi za fedha taslimu kupitia M-Pesa, Tigo Pesa, HaloPesa, Azam Pesa na Airtel Money.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
