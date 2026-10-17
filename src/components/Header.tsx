@@ -1,12 +1,11 @@
 import React from 'react';
-import { Wallet, Globe, SlidersHorizontal, Gamepad2, ArrowDownLeft } from 'lucide-react';
+import { Wallet, Globe, Gamepad2 } from 'lucide-react';
 
 interface HeaderProps {
-  onOpenAdmin: () => void;
   onOpenWithdraw: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenAdmin, onOpenWithdraw }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenWithdraw }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-[#030712]/95 backdrop-blur-md border-b border-cyan-500/20 px-3 sm:px-6 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -48,15 +47,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAdmin, onOpenWithdraw }) =
             <Globe className="w-3 h-3 text-[#00f0ff]" />
             <span>EN</span>
           </div>
-
-          {/* Admin Settings Button */}
-          <button
-            onClick={onOpenAdmin}
-            aria-label="Settings"
-            className="p-1.5 sm:p-2 rounded-lg bg-[#080f21] border border-cyan-500/30 text-slate-300 hover:text-[#00f0ff] hover:border-[#00f0ff]/60 transition-all cursor-pointer shadow-[0_0_10px_rgba(0,240,255,0.1)]"
-          >
-            <SlidersHorizontal className="w-4 h-4" />
-          </button>
         </div>
 
       </div>

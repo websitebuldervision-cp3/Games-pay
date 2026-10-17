@@ -7,59 +7,18 @@ import { WithdrawModal } from './components/WithdrawModal';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { LivePayoutTicker } from './components/LivePayoutTicker';
-import { AdminModal } from './components/AdminModal';
 import { Game } from './types/game';
 import { INITIAL_GAMES, DEFAULT_EXCHANGE_RATE } from './data/games';
 
 export default function App() {
-  // Exchange Rate State (Configurable in one place)
-  const [exchangeRate, setExchangeRate] = useState<number>(() => {
-    const saved = localStorage.getItem('gamespay_exchange_rate');
-    return saved ? parseFloat(saved) : DEFAULT_EXCHANGE_RATE;
-  });
+  // Exchange Rate ($1 = TSh 2,350)
+  const [exchangeRate] = useState<number>(DEFAULT_EXCHANGE_RATE);
 
-  // Games Catalog State
-  const [games, setGames] = useState<Game[]>(() => {
-    const saved = localStorage.getItem('gamespay_games_catalog');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch {
-        return INITIAL_GAMES;
-      }
-    }
-    return INITIAL_GAMES;
-  });
+  // Fixed Official 12 Games Catalog (Admin panel removed)
+  const games: Game[] = INITIAL_GAMES;
 
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
-  const [adminModalOpen, setAdminModalOpen] = useState(false);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
-
-  const handleUpdateExchangeRate = (rate: number) => {
-    setExchangeRate(rate);
-    localStorage.setItem('gamespay_exchange_rate', rate.toString());
-  };
-
-  const handleAddGame = (newGame: Game) => {
-    const updated = [newGame, ...games];
-    setGames(updated);
-    localStorage.setItem('gamespay_games_catalog', JSON.stringify(updated));
-  };
-
-  const handleToggleGameActive = (gameId: string) => {
-    const updated = games.map((g) =>
-      g.id === gameId ? { ...g, active: !g.active } : g
-    );
-    setGames(updated);
-    localStorage.setItem('gamespay_games_catalog', JSON.stringify(updated));
-  };
-
-  const handleResetCatalog = () => {
-    setGames(INITIAL_GAMES);
-    setExchangeRate(DEFAULT_EXCHANGE_RATE);
-    localStorage.removeItem('gamespay_games_catalog');
-    localStorage.removeItem('gamespay_exchange_rate');
-  };
 
   const activeGames = games.filter((g) => g.active);
 
@@ -68,7 +27,6 @@ export default function App() {
       
       {/* 1. Header with Clickable Wallet (opens withdraw / profile requirement modal) */}
       <Header
-        onOpenAdmin={() => setAdminModalOpen(true)}
         onOpenWithdraw={() => setWithdrawModalOpen(true)}
       />
 
@@ -112,18 +70,6 @@ export default function App() {
       <WithdrawModal
         isOpen={withdrawModalOpen}
         onClose={() => setWithdrawModalOpen(false)}
-      />
-
-      {/* 9. Admin Settings Modal */}
-      <AdminModal
-        isOpen={adminModalOpen}
-        onClose={() => setAdminModalOpen(false)}
-        games={games}
-        exchangeRate={exchangeRate}
-        onUpdateExchangeRate={handleUpdateExchangeRate}
-        onAddGame={handleAddGame}
-        onToggleGameActive={handleToggleGameActive}
-        onResetCatalog={handleResetCatalog}
       />
 
     </div>
