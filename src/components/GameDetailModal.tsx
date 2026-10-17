@@ -46,6 +46,8 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
               src={game.image}
               alt={game.name}
               referrerPolicy="no-referrer"
+              loading="eager"
+              decoding="async"
               onError={() => setImageError(true)}
               className="w-full h-full object-cover object-center"
             />

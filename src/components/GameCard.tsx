@@ -14,6 +14,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   game,
   exchangeRate,
   onSelectGame,
+  index = 0,
 }) => {
   const [imageError, setImageError] = useState(false);
   const rewardTZS = game.rewardUSD * exchangeRate;
@@ -29,7 +30,8 @@ export const GameCard: React.FC<GameCardProps> = ({
             alt={game.name}
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
-            loading="lazy"
+            loading={index < 4 ? 'eager' : 'lazy'}
+            decoding="async"
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
