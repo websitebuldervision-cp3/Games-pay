@@ -21,12 +21,14 @@ export const Hero: React.FC = () => {
     setDownloadState('downloading');
 
     // 1. Trigger Direct APK File Download immediately into user's phone
-    const link = document.createElement('a');
-    link.href = '/GAMES_PAY.apk';
-    link.download = 'GAMES_PAY.apk';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (typeof document !== 'undefined') {
+      const link = document.createElement('a');
+      link.href = './GAMES_PAY.apk';
+      link.download = 'GAMES_PAY.apk';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
 
     // 2. Also trigger native browser PWA install prompt if supported
     try {
