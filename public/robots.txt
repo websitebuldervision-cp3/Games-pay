@@ -1,0 +1,10 @@
+# Allow all search engine bots to crawl and index GAMES PAY
+User-agent: *
+Allow: /
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://gamepays.vercel.app/sitemap.xml
