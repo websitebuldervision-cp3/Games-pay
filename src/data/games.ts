@@ -3,16 +3,8 @@ import { Game, GameCategory } from '../types/game';
 // Kiwango cha kubadilisha fedha: $1 = TSh 2,350
 export const DEFAULT_EXCHANGE_RATE = 2350;
 
-// Relative image paths for clean Vercel base="./" deployment
-export const ASSET_IMAGES = {
-  hero: './games/hero.webp',
-  fightingGun: './games/fighting-gun.webp',
-  racingChallenge: './games/racing-challenge.webp',
-  spaceShooter: './games/space-shooter.webp',
-};
-
-// Katalogi ya Magemu 12 Rasmi yenye picha nyepesi za WebP
-export const INITIAL_GAMES: Game[] = [
+// Seti ya Kwanza (Set A) - Magemu 12
+export const GAMES_POOL_A: Game[] = [
   {
     id: 'fighting-gun',
     name: 'Fighting Gun',
@@ -206,6 +198,240 @@ export const INITIAL_GAMES: Game[] = [
     difficulty: 'Ngumu'
   }
 ];
+
+// Seti ya Pili (Set B) - Magemu 12 Mapya Kabisa (Yatakuja baada ya nusu saa)
+export const GAMES_POOL_B: Game[] = [
+  {
+    id: 'cyber-hunter',
+    name: 'Cyber Hunter',
+    category: 'Action',
+    rewardUSD: 22,
+    image: './games/cyber-hunter.webp',
+    description: 'Ingia katika jiji la neon kuwinda majambazi wa mtandaoni kwa bunduki za laser.',
+    conditions: 'Wafukuze na uwashinde maadui wote 7 bila kupoteza ngao ya mwili.',
+    gameplayBrief: 'Mchezo wa kisasa wa risasi na teknolojia ya siku za usoni.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1890,
+    difficulty: 'Ngumu'
+  },
+  {
+    id: 'moto-drift',
+    name: 'Moto Drift',
+    category: 'Racing',
+    rewardUSD: 19,
+    image: './games/moto-drift.webp',
+    description: 'Mashindano ya kasi ya pikipiki zenye injini kali za nitro kwenye barabara za lami.',
+    conditions: 'Shinda awamu 3 za mbio za kasi bila kugongana na vizuizi.',
+    gameplayBrief: 'Mchezo wa kuendesha pikipiki na kuteleza kwenye kona za hatari.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1640,
+    difficulty: 'Wastani'
+  },
+  {
+    id: 'ninja-shadow',
+    name: 'Ninja Shadow',
+    category: 'Action',
+    rewardUSD: 16,
+    image: './games/ninja-shadow.webp',
+    description: 'Ruka majengo ya giza kwa siri na tumia upanga kukamilisha kazi za usiku.',
+    conditions: 'Kamilisha ngazi 4 za giza bila kugunduliwa na walinzi.',
+    gameplayBrief: 'Mchezo wa siri na mapigano ya ustadi wa kijapani.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1410,
+    difficulty: 'Ngumu'
+  },
+  {
+    id: 'galaxy-wars',
+    name: 'Galaxy Wars',
+    category: 'Action',
+    rewardUSD: 24,
+    image: './games/galaxy-wars.webp',
+    description: 'Mapigano ya anga za mbali kulinda kituo cha sayari dhidi ya meli za kigeni.',
+    conditions: 'Shinda mawimbi 6 ya meli za adui na uhifadhi nishati ya kituo.',
+    gameplayBrief: 'Mchezo wa vita vya anga wenye madoido ya laser za rangi.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 2050,
+    difficulty: 'Ngumu'
+  },
+  {
+    id: 'temple-escape',
+    name: 'Temple Escape',
+    category: 'Adventure',
+    rewardUSD: 11,
+    image: './games/temple-escape.webp',
+    description: 'Kimbia kutoka kwenye hekalu lililojaa mitego na miiba ya moto.',
+    conditions: 'Kimbia mita 3,000 mfululizo huku ukikusanya sarafu zote za dhahabu.',
+    gameplayBrief: 'Mchezo wa kukimbia kwa kasi, kuruka na kuteleza chini.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 2280,
+    difficulty: 'Rahisi'
+  },
+  {
+    id: 'boxing-champion',
+    name: 'Boxing Champion',
+    category: 'Sports',
+    rewardUSD: 13,
+    image: './games/boxing-champion.webp',
+    description: 'Panda ulingoni, piga makonde ya nguvu na ujipatie mkanda wa ubingwa wa dunia.',
+    conditions: 'Shinda mapambano 3 mfululizo kwa KO kabla ya raundi ya tano.',
+    gameplayBrief: 'Mchezo wa masumbwi wenye ngumi za haraka na ulinzi mkali.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1530,
+    difficulty: 'Wastani'
+  },
+  {
+    id: 'tank-assault',
+    name: 'Tank Assault',
+    category: 'Strategy',
+    rewardUSD: 17,
+    image: './games/tank-assault.webp',
+    description: 'Endesha kifaru cha kivita na uangushe ngome za maadui kwenye uwanja wa mchanga.',
+    conditions: 'Lenga na uharibu vifaru 8 vya adui ndani ya dakika 4.',
+    gameplayBrief: 'Mapigano ya vifaru na milipuko ya mabomu ya mbali.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1370,
+    difficulty: 'Wastani'
+  },
+  {
+    id: 'speed-boat',
+    name: 'Speed Boat',
+    category: 'Racing',
+    rewardUSD: 14,
+    image: './games/speed-boat.webp',
+    description: 'Mashindano ya boti za mwendo kasi baharini katikati ya mawimbi makubwa.',
+    conditions: 'Fika mstari wa mwisho kwanza bila boti yako kupinduka na mawimbi.',
+    gameplayBrief: 'Mashindano ya majini yenye kasi ya kipekee na miruko mikali.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1290,
+    difficulty: 'Wastani'
+  },
+  {
+    id: 'dungeon-crawler',
+    name: 'Dungeon Crawler',
+    category: 'Adventure',
+    rewardUSD: 15,
+    image: './games/dungeon-crawler.webp',
+    description: 'Shuka kwenye mapango ya chini ya ardhi kutafuta vito na silaha za kichawi.',
+    conditions: 'Fungua milango yote 5 ya chuma na umshinde joka mlinzi wa hazina.',
+    gameplayBrief: 'Mchezo wa upelelezi wa mapango ya giza na mawe ya thamani.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1140,
+    difficulty: 'Ngumu'
+  },
+  {
+    id: 'neon-rider',
+    name: 'Neon Rider',
+    category: 'Racing',
+    rewardUSD: 21,
+    image: './games/neon-rider.webp',
+    description: 'Paa na gari la umeme lenye taa za rangi angavu kwenye daraja la anga.',
+    conditions: 'Vunja rekodi ya kasi na ushinde taji la mkimbiaji bora wa usiku.',
+    gameplayBrief: 'Mchezo wa kuendesha gari kwa mwendo wa kasi kwenye daraja la neon.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1750,
+    difficulty: 'Wastani'
+  },
+  {
+    id: 'sniper-elite',
+    name: 'Sniper Elite',
+    category: 'Action',
+    rewardUSD: 25,
+    image: './games/sniper-elite.webp',
+    description: 'Panda juu ya mnara mrefu na utumie darubini kulenga shabaha za mbali.',
+    conditions: 'Piga shabaha zote 6 kwa risasi moja kila moja bila kukosa.',
+    gameplayBrief: 'Mchezo wa umakini wa juu wa kupiga shabaha za kijeshi.',
+    isFeatured: true,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 2410,
+    difficulty: 'Ngumu'
+  },
+  {
+    id: 'alien-invasion',
+    name: 'Alien Invasion',
+    category: 'Strategy',
+    rewardUSD: 18,
+    image: './games/alien-invasion.webp',
+    description: 'Jenga mifumo ya ulinzi ya anga kulinda jiji dhidi ya uvamizi wa viumbe geni.',
+    conditions: 'Simamisha mashambulizi yote ya mawimbi 5 ya viumbe vya angani.',
+    gameplayBrief: 'Mchezo wa mkakati wa ulinzi wa minara ya leza.',
+    isFeatured: false,
+    isNew: true,
+    active: true,
+    publishDate: '2026-10-26',
+    playCount: 1680,
+    difficulty: 'Wastani'
+  }
+];
+
+// Helper: Pata muda uliobaki kwenye nusu saa ya sasa (30 minutes slot)
+export function get30MinuteSlotInfo(): {
+  slotIndex: number;
+  minutesRemaining: number;
+  secondsRemaining: number;
+  formattedCountdown: string;
+} {
+  const now = new Date();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  // Kila nusu saa ni slot mpya: 0-29 ni slot 0, 30-59 ni slot 1
+  const halfHourSlot = Math.floor(now.getTime() / (30 * 60 * 1000));
+  
+  const minutesIntoSlot = minutes % 30;
+  const minutesRemaining = 29 - minutesIntoSlot;
+  const secondsRemaining = 59 - seconds;
+
+  const mm = minutesRemaining.toString().padStart(2, '0');
+  const ss = secondsRemaining.toString().padStart(2, '0');
+
+  return {
+    slotIndex: halfHourSlot,
+    minutesRemaining,
+    secondsRemaining,
+    formattedCountdown: `${mm}m ${ss}s`
+  };
+}
+
+// Pata magemu 12 yanayofaa kwa sasa (yanabadilika kila baada ya nusu saa)
+export function getActiveGamesForSlot(slotIndex: number): Game[] {
+  // Inabadilishana kati ya Pool A na Pool B kila nusu saa
+  const isPoolB = slotIndex % 2 === 1;
+  return isPoolB ? GAMES_POOL_B : GAMES_POOL_A;
+}
+
+export const INITIAL_GAMES: Game[] = GAMES_POOL_A;
 
 export const GAME_CATEGORIES: ('Zote' | GameCategory)[] = [
   'Zote',

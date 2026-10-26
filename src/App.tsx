@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { GameCard } from './components/GameCard';
@@ -8,19 +8,34 @@ import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { LivePayoutTicker } from './components/LivePayoutTicker';
 import { Game } from './types/game';
-import { INITIAL_GAMES, DEFAULT_EXCHANGE_RATE } from './data/games';
+import {
+  DEFAULT_EXCHANGE_RATE,
+  get30MinuteSlotInfo,
+  getActiveGamesForSlot
+} from './data/games';
 
 export default function App() {
   // Exchange Rate ($1 = TSh 2,350)
   const [exchangeRate] = useState<number>(DEFAULT_EXCHANGE_RATE);
 
-  // Fixed Official 12 Games Catalog (Admin panel removed)
-  const games: Game[] = INITIAL_GAMES;
-
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
-  const activeGames = games.filter((g) => g.active);
+  // Mfumo wa kubadilisha magemu kila baada ya nusu saa (30 Minutes Rotation)
+  const [slotInfo, setSlotInfo] = useState(() => get30MinuteSlotInfo());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlotInfo(get30MinuteSlotInfo());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Magemu 12 yanayofaa kulingana na nusu saa ya sasa (yanabadilika kiotomatiki)
+  const activeGames = useMemo(() => {
+    return getActiveGamesForSlot(slotInfo.slotIndex);
+  }, [slotInfo.slotIndex]);
 
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
@@ -31,15 +46,15 @@ export default function App() {
       />
 
       <main className="flex-1">
-        {/* 2. Hero: Small boxy Install App, Swahili notice with 'reward', GUSA HAPA TENGENEZA PROFILE YA GAMING, compact date (Sat, Oct 17) */}
-        <Hero />
+        {/* 2. Hero: Direct Install App, Swahili notice with 'reward', GUSA HAPA TENGENEZA PROFILE YA GAMING, Live 30-min Countdown */}
+        <Hero countdown={slotInfo.formattedCountdown} />
 
-        {/* 3. Game Cards Grid (Compact 2 columns on mobile so 4+ games are immediately in view) */}
+        {/* 3. Game Cards Grid (2 columns on mobile, 12 fresh games rotating every 30 minutes) */}
         <section className="px-3 sm:px-6 max-w-4xl mx-auto py-1">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5">
             {activeGames.map((game, index) => (
               <GameCard
-                key={game.id}
+                key={`${slotInfo.slotIndex}-${game.id}`}
                 game={game}
                 index={index}
                 exchangeRate={exchangeRate}
@@ -59,7 +74,7 @@ export default function App() {
       {/* 6. Real WhatsApp Floating Button with CUSTOMER CARE Tag */}
       <WhatsAppButton />
 
-      {/* 7. Game Details & Profile Registration Modal (No play game now button, no long game instructions) */}
+      {/* 7. Game Details & Profile Registration Modal */}
       <GameDetailModal
         game={selectedGame}
         exchangeRate={exchangeRate}

@@ -26,7 +26,19 @@ const GAMES_LIST = [
   { name: 'City Driving', usd: 10 },
   { name: 'Treasure Hunt', usd: 7 },
   { name: 'Basketball Legends', usd: 9 },
-  { name: 'Strategy Battle', usd: 14 }
+  { name: 'Strategy Battle', usd: 14 },
+  { name: 'Cyber Hunter', usd: 22 },
+  { name: 'Moto Drift', usd: 19 },
+  { name: 'Ninja Shadow', usd: 16 },
+  { name: 'Galaxy Wars', usd: 24 },
+  { name: 'Temple Escape', usd: 11 },
+  { name: 'Boxing Champion', usd: 13 },
+  { name: 'Tank Assault', usd: 17 },
+  { name: 'Speed Boat', usd: 14 },
+  { name: 'Dungeon Crawler', usd: 15 },
+  { name: 'Neon Rider', usd: 21 },
+  { name: 'Sniper Elite', usd: 25 },
+  { name: 'Alien Invasion', usd: 18 }
 ];
 
 // Orodha ya kwanza maalumu iliyoagizwa

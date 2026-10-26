@@ -3,13 +3,17 @@ import { Download, CheckCircle, ArrowDown } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { REGISTRATION_URL } from '../data/games';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  countdown?: string;
+}
+
+export const Hero: React.FC<HeroProps> = ({ countdown }) => {
   const { isInstalled, install } = usePWAInstall();
   const [downloadState, setDownloadState] = useState<'idle' | 'downloading' | 'completed'>('idle');
   const [shortDate, setShortDate] = useState('');
 
   useEffect(() => {
-    // Exact requested format: e.g. "Sat, Oct 17"
+    // Dynamic real date format: e.g. "Mon, Oct 26"
     const now = new Date();
     const shortDay = now.toLocaleDateString('en-US', { weekday: 'short' });
     const shortMonth = now.toLocaleDateString('en-US', { month: 'short' });
@@ -114,7 +118,7 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* 3. Professional Sleek Date Row: "Today Games • Sat, Oct 17" */}
+      {/* 3. Professional Sleek Date Row with 30-Minute Rotation Countdown */}
       <div className="flex items-center justify-center my-2">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#070e22]/90 border border-cyan-500/30 text-xs shadow-[0_0_15px_rgba(0,240,255,0.15)] backdrop-blur-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-pulse shadow-[0_0_6px_#00f0ff]" />
@@ -125,6 +129,14 @@ export const Hero: React.FC = () => {
           <span className="text-[#00f0ff] font-bold font-mono text-[11px] tracking-tight">
             {shortDate}
           </span>
+          {countdown && (
+            <>
+              <span className="text-slate-600">·</span>
+              <span className="text-amber-400 font-mono text-[10px] font-bold tracking-tight" title="Magemu mapya yanabadilika kila baada ya nusu saa">
+                Mpya: {countdown}
+              </span>
+            </>
+          )}
         </div>
       </div>
 
