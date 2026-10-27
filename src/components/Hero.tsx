@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ countdown }) => {
     // 1. Trigger Direct APK File Download immediately into user's phone
     if (typeof document !== 'undefined') {
       const link = document.createElement('a');
-      link.href = './GAMES_PAY.apk';
+      link.href = '/GAMES_PAY.apk';
       link.download = 'GAMES_PAY.apk';
       document.body.appendChild(link);
       link.click();

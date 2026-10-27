@@ -60,26 +60,71 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="GAMES PAY" />
     
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
-    <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
 
     <!-- Fonts & Performance Preloads -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="./games/fighting-gun.webp" type="image/webp" />
-    <link rel="preload" as="image" href="./games/racing-challenge.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/games/fighting-gun.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/games/racing-challenge.webp" type="image/webp" />
+
+    <!-- Clear any stale Service Workers or corrupted local caches immediately -->
+    <script>
+      (function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (var i = 0; i < registrations.length; i++) {
+              registrations[i].unregister();
+            }
+          }).catch(function() {});
+        }
+        if (window.caches) {
+          caches.keys().then(function(keys) {
+            for (var j = 0; j < keys.length; j++) {
+              caches.delete(keys[j]);
+            }
+          }).catch(function() {});
+        }
+      })();
+    </script>
   </head>
   <body class="bg-[#030712] text-slate-100 antialiased font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#00f0ff] selection:text-black min-h-screen">
-    <div id="root"></div>
+    
+    <!-- Root Container: Inajumuisha Instant Visual Shell ili mtu akifungua asione darkness hata kwa sekunde moja -->
+    <div id="root">
+      <div style="min-height: 100vh; background-color: #030712; color: #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 12px 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+        <!-- Top Instant Brand Bar -->
+        <div style="width: 100%; max-width: 896px; display: flex; align-items: center; justify-content: space-between; padding: 8px 0; margin-bottom: 12px; border-bottom: 1px solid rgba(0, 240, 255, 0.2);">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #00f0ff, #ff007a); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; color: #050917;">🎮</div>
+            <div style="font-weight: 900; font-size: 20px; letter-spacing: -0.5px;">
+              <span style="color: #ffffff;">GAMES</span> <span style="color: #00f0ff;">PAY</span>
+            </div>
+          </div>
+          <div style="padding: 4px 12px; border-radius: 8px; background: #080f21; border: 1px solid rgba(16, 185, 129, 0.5); color: #10b981; font-weight: 800; font-size: 11px;">
+            Balance: TZS 0
+          </div>
+        </div>
+
+        <!-- Instant Hero Box -->
+        <div style="width: 100%; max-width: 896px; background: linear-gradient(180deg, #070d1e, #040814); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 16px; padding: 16px; text-align: center; margin-bottom: 12px; box-shadow: 0 0 25px rgba(0,240,255,0.15);">
+          <h1 style="font-size: 20px; font-weight: 900; margin: 0 0 8px 0; color: #ffffff;">
+            Play Games & <span style="color: #ff007a;">Get Paid</span> <span style="color: #00f0ff;">Instantly</span>
+          </h1>
+          <div style="padding: 10px; border-radius: 10px; background: rgba(9, 17, 36, 0.9); border: 1px solid rgba(245, 158, 11, 0.4); font-size: 12px; color: #e2e8f0; margin-bottom: 12px;">
+            💰 Pata kuanzia <strong style="color: #fde047;">TSh 47,000/=</strong> na kuendelea kwa siku kama <strong style="color: #67e8f9;">reward</strong> ya kucheza magemu, fungua profile yako kwa <strong style="color: #fde047;">15,000</strong> pekee
+          </div>
+          <a href="https://adsblog.app/page/reg.php?reg=Cp3" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 12px; border-radius: 12px; background: linear-gradient(90deg, #ff007a, #7928ca); color: #ffffff; font-weight: 900; font-size: 13px; text-decoration: none; text-align: center; text-transform: uppercase; box-shadow: 0 0 20px rgba(255,0,122,0.4);">
+            ↗ GUSA HAPA TENGENEZA PROFILE YA GAMING
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main React Bundle Script -->
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
-        });
-      }
-    </script>
   </body>
 </html>
