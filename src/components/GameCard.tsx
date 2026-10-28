@@ -30,19 +30,26 @@ export const GameCard: React.FC<GameCardProps> = ({
             alt={game.name}
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
-            loading={index < 4 ? 'eager' : 'lazy'}
+            loading="lazy"
             decoding="async"
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#0c152d] to-[#050a16] flex flex-col items-center justify-center p-2 text-center">
-            <Gamepad2 className="w-8 h-8 text-[#00f0ff] mb-1" />
-            <span className="text-[10px] font-bold text-slate-300 truncate w-full">{game.name}</span>
-          </div>
+          <img
+            src={`/games/${game.id}.jpg`}
+            alt={game.name}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              // Final fallback to clean styled placeholder
+              e.currentTarget.style.display = 'none';
+            }}
+            className="w-full h-full object-cover object-center"
+          />
         )}
 
         {/* Gradient Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040814] via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040814] via-transparent to-transparent opacity-80 pointer-events-none" />
 
         {/* Category Badge (Clean Tag at Bottom Left) */}
         <div className="absolute bottom-1.5 left-2">
@@ -73,7 +80,7 @@ export const GameCard: React.FC<GameCardProps> = ({
           </div>
         </div>
 
-        {/* 3. Button: Exact text requested: PLAY GAME (NOT cheza game) */}
+        {/* 3. Button: Exact text requested: PLAY GAME */}
         <button
           onClick={() => onSelectGame(game)}
           className="w-full py-2 sm:py-2.5 px-3 rounded-xl font-black text-xs text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_15px_rgba(255,0,122,0.4)] hover:shadow-[0_0_20px_rgba(255,0,122,0.6)] transition-all transform active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer uppercase tracking-wider"

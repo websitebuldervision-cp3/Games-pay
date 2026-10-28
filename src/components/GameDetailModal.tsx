@@ -46,17 +46,24 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
               src={game.image}
               alt={game.name}
               referrerPolicy="no-referrer"
-              loading="eager"
+              loading="lazy"
               decoding="async"
               onError={() => setImageError(true)}
               className="w-full h-full object-cover object-center"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-cyan-950 to-slate-950 flex items-center justify-center">
-              <Gamepad2 className="w-12 h-12 text-[#00f0ff]" />
-            </div>
+            <img
+              src={`/games/${game.id}.jpg`}
+              alt={game.name}
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+              className="w-full h-full object-cover object-center"
+            />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040714] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040714] via-transparent to-transparent pointer-events-none" />
           
           <div className="absolute bottom-2 left-2.5">
             <span className="text-[10px] font-bold text-[#00f0ff] bg-[#030712]/90 px-2 py-0.5 rounded-md border border-cyan-500/30 uppercase tracking-wider">
