@@ -46,8 +46,8 @@ export default function App() {
       />
 
       <main className="flex-1">
-        {/* 2. Hero: Direct Install App, Swahili notice with 'reward', GUSA HAPA TENGENEZA PROFILE YA GAMING, Live 30-min Countdown */}
-        <Hero countdown={slotInfo.formattedCountdown} />
+        {/* 2. Hero: Direct Install App with 👉 Pointer, Professional Header, Today Games */}
+        <Hero />
 
         {/* 3. Game Cards Grid (2 columns on mobile, 12 fresh games rotating every 30 minutes) */}
         <section className="px-3 sm:px-6 max-w-4xl mx-auto py-1">
