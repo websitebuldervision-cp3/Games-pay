@@ -44,7 +44,7 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
           {!imageError ? (
             <img
               src={game.image}
-              alt={game.name}
+              alt={`${game.name} — Cheza na Kulipwa | GAMES PAY`}
               referrerPolicy="no-referrer"
               loading="lazy"
               decoding="async"

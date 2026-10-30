@@ -1,10 +1,19 @@
-# Allow all search engine bots to crawl and index GAMES PAY
+# Allow search engine crawlers to access GAMES PAY
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /games/
+Allow: /assets/
 
-# Googlebot specific rules
+# Googlebot specific directives
 User-agent: Googlebot
 Allow: /
+Allow: /images/
+Allow: /games/
+Allow: /assets/
+
+# Disallow internal API endpoints if any
+Disallow: /api/
 
 # Canonical XML Sitemap
-Sitemap: https://gamepays.vercel.app/sitemap.xml
+Sitemap: https://gamespay.site/sitemap.xml

@@ -50,7 +50,8 @@ export default function App() {
         <Hero />
 
         {/* 3. Game Cards Grid (2 columns on mobile, 12 fresh games rotating every 30 minutes) */}
-        <section className="px-3 sm:px-6 max-w-4xl mx-auto py-1">
+        <section className="px-3 sm:px-6 max-w-4xl mx-auto py-1" aria-label="Orodha ya Magemu Rasmi ya GAMES PAY">
+          <h2 className="sr-only">Michezo ya Mtandaoni na Zawadi za Pesa Tanzania — GAMES PAY</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5">
             {activeGames.map((game, index) => (
               <GameCard
