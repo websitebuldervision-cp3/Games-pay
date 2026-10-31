@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
-    <!-- Primary Page Title & Meta Tags -->
-    <title>GAMES PAY — Play Games & Earn Instant Rewards | Cheza Games na Kulipwa</title>
-    <meta name="description" content="Cheza magemu mtandaoni na upokee instant cash rewards moja kwa moja kwenye M-Pesa, Tigo Pesa, Airtel Money na HaloPesa Tanzania kupitia GAMES PAY." />
-    <meta name="keywords" content="GAMES PAY, Games Pay Tanzania, Play Games and Earn, Cheza Games na Kulipwa, Online Games Tanzania, Games Rewards, lipwa kucheza games, gaming rewards Tanzania" />
+    <!-- Primary Page Title & Meta Tags (Requested Exact Copy) -->
+    <title>GAMES PAY – Cheza Games na Kulipwa | Jifunze Kutengeneza Pesa Online</title>
+    <meta name="description" content="Karibu GAMES PAY. Jifunze kuhusu michezo, jinsi ya kucheza na kupata malipo kulingana na masharti ya kila mchezo." />
+    <meta name="keywords" content="GAMES PAY, Games Pay Tanzania, Play Games and Earn, Cheza Games na Kulipwa, Online Games Tanzania, Games Rewards, lipwa kucheza games, Jifunze Kutengeneza Pesa Online, gaming rewards Tanzania" />
     <meta name="author" content="GAMES PAY" />
     <meta name="theme-color" content="#030712" />
 
@@ -24,18 +24,18 @@
     <!-- Open Graph (Facebook, WhatsApp, Discord, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gamespay.site/" />
-    <meta property="og:title" content="GAMES PAY — Play Games & Earn Instant Rewards | Cheza Games na Kulipwa" />
-    <meta property="og:description" content="Cheza magemu mtandaoni na upokee instant cash rewards moja kwa moja kwenye M-Pesa, Tigo Pesa, Airtel Money na HaloPesa Tanzania kupitia GAMES PAY." />
+    <meta property="og:title" content="GAMES PAY – Cheza Games na Kulipwa | Jifunze Kutengeneza Pesa Online" />
+    <meta property="og:description" content="Karibu GAMES PAY. Jifunze kuhusu michezo, jinsi ya kucheza na kupata malipo kulingana na masharti ya kila mchezo." />
     <meta property="og:image" content="https://gamespay.site/images/fighting-gun.jpg" />
-    <meta property="og:image:alt" content="GAMES PAY — Elite Gaming Rewards Platform" />
+    <meta property="og:image:alt" content="GAMES PAY — Cheza Games na Kulipwa Tanzania" />
     <meta property="og:site_name" content="GAMES PAY" />
     <meta property="og:locale" content="sw_TZ" />
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://gamespay.site/" />
-    <meta name="twitter:title" content="GAMES PAY — Play Games & Earn Instant Rewards | Cheza Games na Kulipwa" />
-    <meta name="twitter:description" content="Cheza magemu mtandaoni na upokee instant cash rewards moja kwa moja kwenye M-Pesa, Tigo Pesa, Airtel Money na HaloPesa Tanzania." />
+    <meta name="twitter:title" content="GAMES PAY – Cheza Games na Kulipwa | Jifunze Kutengeneza Pesa Online" />
+    <meta name="twitter:description" content="Karibu GAMES PAY. Jifunze kuhusu michezo, jinsi ya kucheza na kupata malipo kulingana na masharti ya kila mchezo." />
     <meta name="twitter:image" content="https://gamespay.site/images/fighting-gun.jpg" />
 
     <!-- Schema.org Structured Data (JSON-LD) -->
@@ -48,8 +48,8 @@
           "@id": "https://gamespay.site/#website",
           "url": "https://gamespay.site/",
           "name": "GAMES PAY",
-          "alternateName": ["Games Pay Tanzania", "GamesPay", "GAMES PAY - Play Games and Earn"],
-          "description": "Jukwaa la kucheza magemu mtandaoni na kulipwa instant rewards nchini Tanzania kupitia mifumo ya simu.",
+          "alternateName": ["Games Pay Tanzania", "GamesPay", "GAMES PAY - Cheza Games na Kulipwa"],
+          "description": "Karibu GAMES PAY. Jifunze kuhusu michezo, jinsi ya kucheza na kupata malipo kulingana na masharti ya kila mchezo.",
           "inLanguage": ["sw", "en"]
         },
         {
@@ -60,6 +60,12 @@
           "logo": {
             "@type": "ImageObject",
             "url": "https://gamespay.site/icon.svg"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+255610664840",
+            "contactType": "customer service",
+            "availableLanguage": ["Swahili", "English"]
           }
         },
         {
@@ -69,12 +75,24 @@
           "url": "https://gamespay.site/",
           "applicationCategory": "GameApplication",
           "operatingSystem": "Android, iOS, Web, Windows",
-          "description": "Cheza magemu ya kisasa, fanya michezo na pokea rewards za moja kwa moja kwenye namba yako ya simu.",
+          "description": "Cheza magemu ya kisasa mtandaoni na pokea rewards za moja kwa moja kwenye simu yako ya mkononi.",
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "TZS"
           }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://gamespay.site/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://gamespay.site/"
+            }
+          ]
         }
       ]
     }
@@ -119,7 +137,7 @@
   </head>
   <body class="bg-[#030712] text-slate-100 antialiased font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#00f0ff] selection:text-black min-h-screen">
     
-    <!-- React Mount Root -->
+    <!-- React Mount Root with Safe Non-Blocking Skeleton -->
     <div id="root">
       <div style="min-height: 100vh; background-color: #030712; color: #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center;">
         <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #00f0ff, #ff007a); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px;">🎮</div>
@@ -127,7 +145,7 @@
           <span style="color: #ffffff;">GAMES</span> <span style="color: #00f0ff;">PAY</span>
         </div>
         <div style="display: flex; align-items: center; gap: 8px; color: #00f0ff; font-size: 13px; font-weight: 700;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #00f0ff; display: inline-block; animation: pulse 1s infinite;"></span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #00f0ff; display: inline-block;"></span>
           Inapakia magemu...
         </div>
       </div>

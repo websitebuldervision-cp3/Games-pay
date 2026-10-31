@@ -18,7 +18,7 @@ export const HowItWorks: React.FC = () => {
       title: 'Tengeneza Profile Yako',
       icon: UserCheck,
       description:
-        `Gusa kitufe cha usajili na ukamilishe ada ya profile ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} kupitia AdsBlog Cp3 ili kuwezesha akaunti na utambulisho wako salama.`,
+        `Gusa kitufe cha usajili na ukamilishe ada ya profile ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} kupitia Moxera Agencies Cp3 ili kuwezesha akaunti na utambulisho wako salama.`,
       highlight: `Ada: TSh ${formatTZS(REGISTRATION_FEE_TZS)}`
     },
     {

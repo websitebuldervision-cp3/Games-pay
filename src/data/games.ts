@@ -447,3 +447,5 @@ export const GAME_CATEGORIES: ('Zote' | GameCategory)[] = [
 export const REGISTRATION_URL = 'https://moxeraagencies.com/register?ref=Cp3';
 export const REGISTRATION_FEE_TZS = 15000;
 export const WHATSAPP_URL = 'https://wa.me/255610664840';
+export const WHATSAPP_CHANNEL_URL = 'https://whatsapp.com/channel/0029Vb4qJb289inbM2HqB80a';
+
