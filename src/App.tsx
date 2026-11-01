@@ -37,6 +37,18 @@ export default function App() {
   const [loadError, setLoadError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Futa parameters kama ?url= mara moja bila kufanya reload kuzuia loops
+    if (typeof window !== 'undefined' && window.location.search) {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('url') || params.has('ref_url')) {
+        params.delete('url');
+        params.delete('ref_url');
+        const cleanQuery = params.toString();
+        const cleanUrl = window.location.pathname + (cleanQuery ? `?${cleanQuery}` : '') + window.location.hash;
+        window.history.replaceState({}, '', cleanUrl);
+      }
+    }
+
     const timer = setInterval(() => {
       try {
         setSlotInfo(get30MinuteSlotInfo());

@@ -1,19 +1,4 @@
-# Allow search engine crawlers to access GAMES PAY
 User-agent: *
 Allow: /
-Allow: /images/
-Allow: /games/
-Allow: /assets/
 
-# Googlebot specific directives
-User-agent: Googlebot
-Allow: /
-Allow: /images/
-Allow: /games/
-Allow: /assets/
-
-# Disallow internal API endpoints if any
-Disallow: /api/
-
-# Canonical XML Sitemap
 Sitemap: https://gamespay.site/sitemap.xml
