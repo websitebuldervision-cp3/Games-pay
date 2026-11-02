@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
                 👉
               </span>
               <span className="text-[10px] font-black text-amber-300 bg-amber-950/80 px-2 py-0.5 rounded-md border border-amber-500/50 shadow-[0_0_10px_rgba(245,158,11,0.4)] whitespace-nowrap hidden xs:inline-block">
-                Download Hapa
+                Install Here
               </span>
             </div>
           )}
@@ -102,17 +102,17 @@ export const Hero: React.FC = () => {
             {downloadState === 'downloading' ? (
               <>
                 <ArrowDown className="w-3.5 h-3.5 text-[#00f0ff] animate-bounce" />
-                <span>Inapakua App...</span>
+                <span>Downloading App...</span>
               </>
             ) : downloadState === 'completed' ? (
               <>
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Imepakuliwa Kwenye Simu!</span>
+                <span>App Installed!</span>
               </>
             ) : (
               <>
                 <Download className="w-3.5 h-3.5 text-[#00f0ff]" />
-                <span>{isInstalled ? 'App Imewekwa' : 'Install App'}</span>
+                <span>{isInstalled ? 'Installed' : 'Install App'}</span>
               </>
             )}
           </button>
@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
 
         {downloadState === 'completed' && (
           <div className="text-[10px] text-emerald-300 font-bold mt-1 animate-in fade-in">
-            ✓ Faili la GAMES PAY limeingia kwenye simu yako! Fungua uisakinishe.
+            ✓ GAMES PAY app downloaded! Open to install.
           </div>
         )}
       </div>
