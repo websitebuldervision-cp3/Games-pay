@@ -15,7 +15,7 @@ Jukwaa la kisasa la michezo ya video na zawadi za fedha taslimu (Gaming Rewards)
    - Orodha kamili ya magemu 12 (Fighting Gun, Racing Challenge, Adventure Quest, n.k.).
    - Thamani za zawadi kwa Dola ($ USD) na Shilingi za Kitanzania (TSh) zikitegemea kiwango kikuu cha kubadilisha fedha ($1 = TSh 2,350).
 
-3. **Usajili wa Profile (Profile Registration)**:
+3. **Usajili wa Account (Account Registration)**:
    - Ada ya usajili ya **TSh 15,000**.
    - Kitufe maalum chenye kiungo rasmi: `https://adsblog.app/page/reg.php?reg=Cp3`
 

@@ -13,16 +13,16 @@ export const FAQ: React.FC = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: `Ada ya usajili wa profile ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} ni ya nini?`,
-      answer: `Ada ya usajili wa profile ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} inatumika kuwezesha akaunti yako rasmi ya GAMES PAY, kuthibitisha usalama wa mtumiaji, na kukuunganisha kwenye kanzidata rasmi ya Moxera Agencies chini ya msimbo wa rejea Cp3. Ada hii inalinda jukwaa dhidi ya akaunti feki za roboti na kuhakikisha wachezaji halisi pekee ndio wanaoshiriki.`
+      question: `Ada ya usajili wa account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} ni ya nini?`,
+      answer: `Ada ya usajili wa account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} inatumika kuwezesha account yako rasmi ya GAMES PAY, kuthibitisha usalama wa mtumiaji, na kukuunganisha kwenye kanzidata rasmi ya AdsBlog chini ya msimbo wa rejea Cp3. Ada hii inalinda jukwaa dhidi ya account feki za roboti na kuhakikisha wachezaji halisi pekee ndio wanaoshiriki.`
     },
     {
       question: 'Je, kulipa ada ya usajili kunanihakikishia kupokea fedha bila kucheza?',
-      answer: 'Hapana kabisa. Kulipa ada ya profile ni sharti la ufunguzi wa akaunti na usajili wa utambulisho wako. Ili kupokea zawadi ya fedha, ni lazima ushiriki mchezo husika, ucheze kulingana na sheria na ufikishe viwango vya ushindi vilivyotajwa (masharti ya zawadi). Hakuna fedha za bure zinazotolewa bila kucheza.'
+      answer: 'Hapana kabisa. Kulipa ada ya account ni sharti la ufunguzi wa account na usajili wa utambulisho wako. Ili kupokea zawadi ya fedha, ni lazima ushiriki mchezo husika, ucheze kulingana na sheria na ufikishe viwango vya ushindi vilivyotajwa (masharti ya zawadi). Hakuna fedha za bure zinazotolewa bila kucheza.'
     },
     {
       question: 'Je, zawadi zinalipwaje na kupitia mitandao gani?',
-      answer: 'Zawadi zote za ushindi zinalipwa kwa njia ya fedha taslimu kupitia mitandao mikuu 5 ya simu nchini Tanzania: Vodacom M-Pesa, Tigo Pesa, Halotel HaloPesa, Azam Pesa na Airtel Money. Pesa hutumwa moja kwa moja kwenye namba uliyoisajili kwenye profile yako.'
+      answer: 'Zawadi zote za ushindi zinalipwa kwa njia ya fedha taslimu kupitia mitandao mikuu 5 ya simu nchini Tanzania: Vodacom M-Pesa, Tigo Pesa, Halotel HaloPesa, Azam Pesa na Airtel Money. Pesa hutumwa moja kwa moja kwenye namba uliyoisajili kwenye account yako.'
     },
     {
       question: 'Utoaji wa fedha unachukua muda gani?',

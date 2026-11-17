@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, exchangeRate }) => 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-lg shadow-md shadow-purple-950/50 transition-all hover:shadow-purple-700/30 active:scale-95 whitespace-nowrap shrink-0"
             >
-              <span>Sajili Profile (TSh 15,000)</span>
+              <span>Sajili Account (TSh 15,000)</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-amber-300" />
             </a>
           </div>
@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, exchangeRate }) => 
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 px-4 text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg shadow-md"
             >
-              <span>Gusa Hapa Kutengeneza Profile</span>
+              <span>Gusa Hapa Kufungua Account</span>
               <ArrowUpRight className="w-4 h-4 text-amber-300" />
             </a>
             <div className="mt-2 text-center text-[11px] text-slate-400">

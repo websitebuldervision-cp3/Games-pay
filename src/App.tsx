@@ -75,7 +75,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
       
-      {/* 1. Header with Clickable Wallet (opens withdraw / profile requirement modal) */}
+      {/* 1. Header with Clickable Wallet (opens withdraw / account requirement modal) */}
       <Header
         onOpenWithdraw={() => setWithdrawModalOpen(true)}
       />
@@ -150,7 +150,7 @@ export default function App() {
       {/* 6. Real WhatsApp Floating Button with CUSTOMER CARE Tag */}
       <WhatsAppButton />
 
-      {/* 7. Game Details & Profile Registration Modal */}
+      {/* 7. Game Details & Account Registration Modal */}
       <GameDetailModal
         game={selectedGame}
         exchangeRate={exchangeRate}

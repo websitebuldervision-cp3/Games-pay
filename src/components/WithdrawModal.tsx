@@ -43,13 +43,13 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({ isOpen, onClose })
         <div className="p-3 rounded-xl bg-[#091124] border border-amber-500/40 text-xs text-slate-200 mb-4 text-left space-y-2">
           <div className="flex items-center gap-2 text-amber-400 font-bold">
             <AlertCircle className="w-4 h-4 shrink-0" />
-            <span>Profile ya Gaming Inahitajika!</span>
+            <span>Account ya Gaming Inahitajika!</span>
           </div>
           <p className="leading-relaxed">
-            Ili uweze kutoa pesa au kupokea <strong>reward</strong> zako moja kwa moja kupitia M-Pesa, Tigo Pesa, HaloPesa, Azam Pesa au Airtel Money, unahitaji kutengeneza profile yako ya gaming kwanza.
+            Ili uweze kutoa pesa au kupokea <strong>reward</strong> zako moja kwa moja kupitia M-Pesa, Tigo Pesa, HaloPesa, Azam Pesa au Airtel Money, unahitaji kufungua account yako ya gaming kwanza.
           </p>
           <div className="text-[11px] text-amber-300 font-semibold pt-1 border-t border-slate-800">
-            Ada ya Usajili wa Profile: TSh {formatTZS(REGISTRATION_FEE_TZS)}
+            Ada ya Usajili wa Account: TSh {formatTZS(REGISTRATION_FEE_TZS)}
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({ isOpen, onClose })
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-black text-xs text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_20px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider"
         >
-          <span>↗ GUSA HAPA TENGENEZA PROFILE YA GAMING</span>
+          <span>↗ GUSA HAPA FUNGUA ACCOUNT YA GAMING</span>
         </a>
 
         <div className="text-[10px] text-slate-400 mt-3 flex items-center justify-center gap-1">

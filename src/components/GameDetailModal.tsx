@@ -81,11 +81,11 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
         <div className="p-3.5 rounded-xl bg-[#091124] border border-cyan-500/30 text-xs sm:text-sm text-slate-200 leading-relaxed mb-3.5 text-center">
           <p>
             Ili kucheza game la <strong className="text-white">{game.name}</strong> na kulipwa{' '}
-            <strong className="text-[#00f0ff] font-bold">{formatUSD(game.rewardUSD)} ({formatTZS(rewardTZS)} TSH)</strong>, tengeneza profile yako kwa ajili ya gaming.
+            <strong className="text-[#00f0ff] font-bold">{formatUSD(game.rewardUSD)} ({formatTZS(rewardTZS)} TSH)</strong>, fungua account yako kwa ajili ya gaming.
           </p>
           
           <div className="mt-2 pt-2 border-t border-slate-800 text-xs font-bold text-amber-300">
-            Kutengeneza profile ni {formatTZS(REGISTRATION_FEE_TZS)} pekee
+            Kufungua account ni {formatTZS(REGISTRATION_FEE_TZS)} pekee
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-black text-xs sm:text-sm text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_25px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider"
         >
-          <span>↗ GUSA HAPA TENGENEZA PROFILE YAKO YA GAMING</span>
+          <span>↗ GUSA HAPA FUNGUA ACCOUNT YAKO YA GAMING</span>
         </a>
 
       </div>

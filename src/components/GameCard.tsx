@@ -22,7 +22,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <div className="rounded-2xl bg-gradient-to-b from-[#090f22] to-[#040814] border border-cyan-500/25 hover:border-[#00f0ff]/70 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_25px_rgba(0,240,255,0.25)] p-2.5 sm:p-3 flex flex-col justify-between transition-all duration-300 group">
       
-      {/* 1. Rectangular / Square Game Cover (Profile ya Mraba, NOT Circular, No flags, No top earner) */}
+      {/* 1. Rectangular / Square Game Cover (Kadi ya Mraba, NOT Circular, No flags, No top earner) */}
       <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-[#060b18] border border-cyan-500/20 group-hover:border-[#00f0ff]/50 transition-colors">
         {!imageError ? (
           <img

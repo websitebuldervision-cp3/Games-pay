@@ -15,10 +15,10 @@ export const HowItWorks: React.FC = () => {
     },
     {
       number: '02',
-      title: 'Tengeneza Profile Yako',
+      title: 'Fungua Account Yako',
       icon: UserCheck,
       description:
-        `Gusa kitufe cha usajili na ukamilishe ada ya profile ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} kupitia Moxera Agencies Cp3 ili kuwezesha akaunti na utambulisho wako salama.`,
+        `Gusa kitufe cha usajili na ukamilishe ada ya account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} kupitia AdsBlog Cp3 ili kuwezesha account na utambulisho wako salama.`,
       highlight: `Ada: TSh ${formatTZS(REGISTRATION_FEE_TZS)}`
     },
     {
@@ -102,7 +102,7 @@ export const HowItWorks: React.FC = () => {
               Uko Tayari Kuanza Safari Yako ya Michezo?
             </h3>
             <p className="text-xs text-slate-300 max-w-xl">
-              Tengeneza profile yako sasa kupitia kiungo rasmi cha usajili ili kufungua ufikiaji wa magemu yote na kupokea kitambulisho chako cha mchezaji.
+              Fungua account yako sasa kupitia kiungo rasmi cha usajili ili kufungua ufikiaji wa magemu yote na kupokea kitambulisho chako cha mchezaji.
             </p>
           </div>
           <a
@@ -111,7 +111,7 @@ export const HowItWorks: React.FC = () => {
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-2 shrink-0 shadow-md shadow-amber-500/20"
           >
-            <span>TENGENEZA PROFILE (TSh 15,000)</span>
+            <span>FUNGUA ACCOUNT (TSh 15,000)</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

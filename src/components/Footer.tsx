@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="hover:text-[#00f0ff] transition-colors"
           >
-            Activate Profile (TSh 15,000)
+            Activate Account (TSh 15,000)
           </a>
           <span>·</span>
           <a
