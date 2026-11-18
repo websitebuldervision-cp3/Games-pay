@@ -12,10 +12,10 @@ import { Game, GameCategory } from './types/game';
 import {
   DEFAULT_EXCHANGE_RATE,
   GAME_CATEGORIES,
-  get30MinuteSlotInfo,
-  getActiveGamesForSlot,
-  GAMES_POOL_A,
-  GAMES_POOL_B
+  getDailyPoolIndex,
+  getActiveGamesForDay,
+  ALL_DAILY_GAMES,
+  INITIAL_GAMES,
 } from './data/games';
 import { RefreshCw, AlertCircle } from 'lucide-react';
 
@@ -25,12 +25,12 @@ export default function App() {
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'Zote' | GameCategory>('Zote');
 
-  const [slotInfo, setSlotInfo] = useState(() => {
+  const [dayIndex, setDayIndex] = useState<number>(() => {
     try {
-      return get30MinuteSlotInfo();
+      return getDailyPoolIndex();
     } catch (e) {
-      console.error('SlotInfo initialization fallback:', e);
-      return { slotIndex: 0, minutesRemaining: 30, secondsRemaining: 0, formattedCountdown: '30m 00s' };
+      console.error('DailyPoolIndex initialization fallback:', e);
+      return 0;
     }
   });
 
@@ -49,27 +49,29 @@ export default function App() {
       }
     }
 
+    // Check once per minute so games switch automatically when a new day starts
     const timer = setInterval(() => {
       try {
-        setSlotInfo(get30MinuteSlotInfo());
+        const nextDay = getDailyPoolIndex();
+        setDayIndex((prev) => (prev !== nextDay ? nextDay : prev));
       } catch (err) {
-        console.error('Error updating slot:', err);
+        console.error('Error updating daily games:', err);
       }
-    }, 1000);
+    }, 60 * 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   const activeGames = useMemo<Game[]>(() => {
     try {
-      const games = getActiveGamesForSlot(slotInfo.slotIndex);
+      const games = getActiveGamesForDay(dayIndex);
       if (games && games.length > 0) return games;
-      return GAMES_POOL_A;
+      return INITIAL_GAMES;
     } catch (err) {
-      console.error('Failed to get active games for slot:', err);
-      return GAMES_POOL_A;
+      console.error('Failed to get active games for day:', err);
+      return INITIAL_GAMES;
     }
-  }, [slotInfo.slotIndex]);
+  }, [dayIndex]);
 
   const displayedGames = useMemo<Game[]>(() => {
     if (selectedCategory === 'Zote') {
@@ -79,7 +81,14 @@ export default function App() {
     if (matchingActive.length > 0) {
       return matchingActive;
     }
-    return [...GAMES_POOL_A, ...GAMES_POOL_B].filter((g) => g.category === selectedCategory);
+    // Deduplicate by image/name when pulling category matches from other days
+    const matches = ALL_DAILY_GAMES.filter((g) => g.category === selectedCategory);
+    const seen = new Set<string>();
+    return matches.filter((g) => {
+      if (seen.has(g.name)) return false;
+      seen.add(g.name);
+      return true;
+    }).slice(0, 8);
   }, [activeGames, selectedCategory]);
 
   return (
@@ -156,7 +165,7 @@ export default function App() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5">
               {displayedGames.map((game, index) => (
                 <GameCard
-                  key={`${slotInfo.slotIndex}-${game.id}`}
+                  key={`day-${dayIndex}-${game.id}`}
                   game={game}
                   index={index}
                   exchangeRate={exchangeRate}

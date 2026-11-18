@@ -36,7 +36,7 @@ export const GameCard: React.FC<GameCardProps> = ({
           />
         ) : !fallbackError ? (
           <img
-            src={`/games/${game.id}.jpg`}
+            src={game.image.replace('/images/', '/games/')}
             alt={game.name}
             loading="lazy"
             decoding="async"
