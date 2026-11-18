@@ -4,26 +4,27 @@ import { Hero } from './components/Hero';
 import { GameCard } from './components/GameCard';
 import { GameDetailModal } from './components/GameDetailModal';
 import { WithdrawModal } from './components/WithdrawModal';
+import { CommentSection } from './components/CommentSection';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { LivePayoutTicker } from './components/LivePayoutTicker';
-import { Game } from './types/game';
+import { Game, GameCategory } from './types/game';
 import {
   DEFAULT_EXCHANGE_RATE,
+  GAME_CATEGORIES,
   get30MinuteSlotInfo,
   getActiveGamesForSlot,
-  GAMES_POOL_A
+  GAMES_POOL_A,
+  GAMES_POOL_B
 } from './data/games';
 import { RefreshCw, AlertCircle } from 'lucide-react';
 
 export default function App() {
-  // Exchange Rate ($1 = TSh 2,350)
   const [exchangeRate] = useState<number>(DEFAULT_EXCHANGE_RATE);
-
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<'Zote' | GameCategory>('Zote');
 
-  // Mfumo wa kubadilisha magemu kila baada ya nusu saa (30 Minutes Rotation)
   const [slotInfo, setSlotInfo] = useState(() => {
     try {
       return get30MinuteSlotInfo();
@@ -33,11 +34,10 @@ export default function App() {
     }
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Futa parameters kama ?url= mara moja bila kufanya reload kuzuia loops
     if (typeof window !== 'undefined' && window.location.search) {
       const params = new URLSearchParams(window.location.search);
       if (params.has('url') || params.has('ref_url')) {
@@ -60,7 +60,6 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Magemu 12 yanayofaa kulingana na nusu saa ya sasa (yanabadilika kiotomatiki)
   const activeGames = useMemo<Game[]>(() => {
     try {
       const games = getActiveGamesForSlot(slotInfo.slotIndex);
@@ -72,21 +71,59 @@ export default function App() {
     }
   }, [slotInfo.slotIndex]);
 
+  const displayedGames = useMemo<Game[]>(() => {
+    if (selectedCategory === 'Zote') {
+      return activeGames;
+    }
+    const matchingActive = activeGames.filter((g) => g.category === selectedCategory);
+    if (matchingActive.length > 0) {
+      return matchingActive;
+    }
+    return [...GAMES_POOL_A, ...GAMES_POOL_B].filter((g) => g.category === selectedCategory);
+  }, [activeGames, selectedCategory]);
+
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
+    <div className="min-h-screen bg-[#050814] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
       
-      {/* 1. Header with Clickable Wallet (opens withdraw / account requirement modal) */}
+      {/* 1. Header with GAMESPAY & Toa Pesa */}
       <Header
         onOpenWithdraw={() => setWithdrawModalOpen(true)}
       />
 
       <main className="flex-1 w-full overflow-x-hidden">
-        {/* 2. Hero: Direct Install App with 👉 Pointer, Professional Header, Today Games */}
-        <Hero />
+        {/* 2. Compact Hero: Date + Install App, Simple Headline, Summary Bar */}
+        <Hero
+          onOpenWithdraw={() => setWithdrawModalOpen(true)}
+        />
 
-        {/* 3. Game Cards Grid (2 columns on mobile, 12 fresh games rotating every 30 minutes) */}
-        <section className="px-3 sm:px-6 max-w-4xl mx-auto py-1" aria-label="Orodha ya Magemu Rasmi ya GAMES PAY">
-          <h2 className="sr-only">Michezo ya Mtandaoni na Zawadi za Pesa Tanzania — GAMES PAY</h2>
+        {/* 3. Michezo ya Leo + Interactive Category Filter Tabs */}
+        <section className="px-3.5 sm:px-6 max-w-5xl mx-auto pt-1 pb-4" aria-label="Orodha ya Magemu Rasmi ya GAMES PAY">
+          <div className="flex items-center gap-2.5 mb-2.5">
+            <h2 className="text-sm sm:text-base font-extrabold text-white whitespace-nowrap shrink-0">
+              Michezo ya Leo
+            </h2>
+
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 flex-1" role="tablist" aria-label="Chuja kwa kategoria">
+              {GAME_CATEGORIES.map((category) => {
+                const isActive = selectedCategory === category;
+                return (
+                  <button
+                    key={category}
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap shrink-0 transition-colors cursor-pointer min-h-[32px] ${
+                      isActive
+                        ? 'bg-[#00d8f6] text-[#040814]'
+                        : 'bg-[#10172b] text-slate-300 border border-slate-800 hover:text-white hover:border-slate-700'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Loading state indicator */}
           {isLoading && (
@@ -114,10 +151,10 @@ export default function App() {
             </div>
           )}
 
-          {/* Regular Active Games Grid */}
-          {!isLoading && activeGames && activeGames.length > 0 ? (
+          {/* Responsive 2-column mobile / 3-4 column desktop Game Cards Grid */}
+          {!isLoading && displayedGames && displayedGames.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5">
-              {activeGames.map((game, index) => (
+              {displayedGames.map((game, index) => (
                 <GameCard
                   key={`${slotInfo.slotIndex}-${game.id}`}
                   game={game}
@@ -129,35 +166,38 @@ export default function App() {
             </div>
           ) : !isLoading && !loadError ? (
             <div className="py-12 text-center">
-              <p className="text-sm text-slate-400">Hakuna magemu yaliyopatikana kwa sasa.</p>
+              <p className="text-sm text-slate-400">Hakuna magemu yaliyopatikana kwa kategoria hii.</p>
               <button
-                onClick={() => window.location.reload()}
-                className="mt-3 px-4 py-1.5 rounded-lg bg-cyan-600 text-white text-xs font-bold"
+                onClick={() => setSelectedCategory('Zote')}
+                className="mt-3 px-4 py-1.5 rounded-lg bg-cyan-600 text-white text-xs font-bold cursor-pointer"
               >
-                Pakia Upya
+                Onyesha Magemu Yote
               </button>
             </div>
           ) : null}
         </section>
+
+        {/* 4. Private Session-Only Comment Section at bottom */}
+        <CommentSection />
       </main>
 
-      {/* 4. Footer with Powered by Cp3 👑 */}
+      {/* 5. Footer with Powered by Cp3 👑 */}
       <Footer />
 
-      {/* 5. Fixed Bottom Ticker: LIVE PAYOUT */}
+      {/* 6. Fixed Bottom Ticker: LIVE PAYOUT */}
       <LivePayoutTicker />
 
-      {/* 6. Real WhatsApp Floating Button with CUSTOMER CARE Tag */}
+      {/* 7. Real WhatsApp Floating Button with CUSTOMER CARE Tag */}
       <WhatsAppButton />
 
-      {/* 7. Game Details & Account Registration Modal */}
+      {/* 8. Game Details & Account Registration Modal */}
       <GameDetailModal
         game={selectedGame}
         exchangeRate={exchangeRate}
         onClose={() => setSelectedGame(null)}
       />
 
-      {/* 8. Withdraw Requirement Modal (When user clicks balance/toa) */}
+      {/* 9. Withdraw Requirement Modal */}
       <WithdrawModal
         isOpen={withdrawModalOpen}
         onClose={() => setWithdrawModalOpen(false)}

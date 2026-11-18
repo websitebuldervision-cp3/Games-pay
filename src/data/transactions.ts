@@ -15,30 +15,30 @@ const LAST_INITIALS = ['K.', 'M.', 'S.', 'T.', 'J.', 'R.', 'L.', 'P.', 'B.', 'N.
 const NETWORKS: MobileNetwork[] = ['M-Pesa', 'Tigo Pesa', 'HaloPesa', 'Azam Pesa', 'Airtel Money'];
 
 const GAMES_LIST = [
-  { name: 'Fighting Gun', usd: 20 },
-  { name: 'Racing Challenge', usd: 18 },
-  { name: 'Adventure Quest', usd: 10 },
+  { name: 'Fighting Gun', usd: 11 },
+  { name: 'Racing Challenge', usd: 10 },
+  { name: 'Adventure Quest', usd: 8 },
   { name: 'Puzzle Master', usd: 5 },
-  { name: 'Football Stars', usd: 8 },
-  { name: 'Space Shooter', usd: 15 },
-  { name: 'Bike Racing', usd: 12 },
-  { name: 'Zombie Survival', usd: 18 },
-  { name: 'City Driving', usd: 10 },
-  { name: 'Treasure Hunt', usd: 7 },
-  { name: 'Basketball Legends', usd: 9 },
-  { name: 'Strategy Battle', usd: 14 },
-  { name: 'Cyber Hunter', usd: 22 },
-  { name: 'Moto Drift', usd: 19 },
-  { name: 'Ninja Shadow', usd: 16 },
-  { name: 'Galaxy Wars', usd: 24 },
-  { name: 'Temple Escape', usd: 11 },
-  { name: 'Boxing Champion', usd: 13 },
-  { name: 'Tank Assault', usd: 17 },
-  { name: 'Speed Boat', usd: 14 },
-  { name: 'Dungeon Crawler', usd: 15 },
-  { name: 'Neon Rider', usd: 21 },
-  { name: 'Sniper Elite', usd: 25 },
-  { name: 'Alien Invasion', usd: 18 }
+  { name: 'Football Stars', usd: 7 },
+  { name: 'Space Shooter', usd: 10 },
+  { name: 'Bike Racing', usd: 9 },
+  { name: 'Zombie Survival', usd: 11 },
+  { name: 'City Driving', usd: 7 },
+  { name: 'Treasure Hunt', usd: 6 },
+  { name: 'Basketball Legends', usd: 8 },
+  { name: 'Strategy Battle', usd: 9 },
+  { name: 'Cyber Hunter', usd: 11 },
+  { name: 'Moto Drift', usd: 10 },
+  { name: 'Ninja Shadow', usd: 9 },
+  { name: 'Galaxy Wars', usd: 11 },
+  { name: 'Temple Escape', usd: 7 },
+  { name: 'Boxing Champion', usd: 8 },
+  { name: 'Tank Assault', usd: 10 },
+  { name: 'Speed Boat', usd: 8 },
+  { name: 'Dungeon Crawler', usd: 9 },
+  { name: 'Neon Rider', usd: 10 },
+  { name: 'Sniper Elite', usd: 11 },
+  { name: 'Alien Invasion', usd: 9 }
 ];
 
 // Orodha ya kwanza maalumu iliyoagizwa
@@ -46,8 +46,8 @@ const SEED_TRANSACTIONS: Transaction[] = [
   {
     id: 'tx-001',
     name: 'Marium K.',
-    amountUSD: 33.19,
-    amountTZS: 78000,
+    amountUSD: 11,
+    amountTZS: 25850,
     gameName: 'Fighting Gun',
     network: 'M-Pesa',
     date: '17 Oktoba 2026',
@@ -70,8 +70,8 @@ const SEED_TRANSACTIONS: Transaction[] = [
   {
     id: 'tx-003',
     name: 'Neema S.',
-    amountUSD: 20,
-    amountTZS: 47000,
+    amountUSD: 8,
+    amountTZS: 18800,
     gameName: 'Adventure Quest',
     network: 'Airtel Money',
     date: '17 Oktoba 2026',
@@ -82,8 +82,8 @@ const SEED_TRANSACTIONS: Transaction[] = [
   {
     id: 'tx-004',
     name: 'Bakari T.',
-    amountUSD: 15,
-    amountTZS: 35250,
+    amountUSD: 10,
+    amountTZS: 23500,
     gameName: 'Space Shooter',
     network: 'HaloPesa',
     date: '17 Oktoba 2026',
@@ -94,8 +94,8 @@ const SEED_TRANSACTIONS: Transaction[] = [
   {
     id: 'tx-005',
     name: 'Fatma R.',
-    amountUSD: 18,
-    amountTZS: 42300,
+    amountUSD: 11,
+    amountTZS: 25850,
     gameName: 'Zombie Survival',
     network: 'Azam Pesa',
     date: '17 Oktoba 2026',
@@ -132,9 +132,7 @@ function generateVerifiedTransactions(): Transaction[] {
     const minute = (i * 7) % 60;
     const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
     
-    // Baadhi ya wachezaji wameshinda mara kadhaa au viwango vingi
-    const multiplier = (i % 5 === 0) ? 2 : (i % 9 === 0) ? 1.5 : 1;
-    const amountUSD = Math.round(game.usd * multiplier);
+    const amountUSD = game.usd;
     const amountTZS = amountUSD * 2350;
     
     const refCode = `${prefixes[network]}-${Math.floor(100000 + ((i * 49271) % 900000))}`;

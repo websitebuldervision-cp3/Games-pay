@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wallet, Globe, Gamepad2 } from 'lucide-react';
+import { Wallet } from 'lucide-react';
 
 interface HeaderProps {
   onOpenWithdraw: () => void;
@@ -7,47 +7,27 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenWithdraw }) => {
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#030712]/95 backdrop-blur-md border-b border-cyan-500/20 px-3 sm:px-6 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+    <header className="sticky top-0 z-40 w-full bg-[#050814]/95 backdrop-blur-md border-b border-slate-800/80 px-3.5 sm:px-6 py-2.5">
+      <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
         
-        {/* Brand Logo & Name */}
-        <div className="flex items-center gap-2.5">
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#00f0ff] via-purple-600 to-[#ff007a] p-[1.5px] shadow-[0_0_15px_rgba(0,240,255,0.4)]">
-            <div className="w-full h-full bg-[#050917] rounded-[10px] flex items-center justify-center">
-              <Gamepad2 className="w-5 h-5 text-[#00f0ff]" />
-            </div>
-          </div>
+        {/* Brand Wordmark */}
+        <a
+          href="/"
+          className="flex items-center font-black text-xl sm:text-2xl tracking-tight whitespace-nowrap shrink-0"
+        >
+          <span className="text-white">GAMES</span>
+          <span className="text-[#00f0ff]">PAY</span>
+        </a>
 
-          <div className="flex items-center font-black text-xl sm:text-2xl tracking-tighter">
-            <span className="text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">GAMES</span>
-            <span className="text-[#00f0ff] ml-1.5 drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">PAY</span>
-          </div>
-        </div>
-
-        {/* Right Controls: Clickable Wallet / Balance triggering withdraw requirement */}
-        <div className="flex items-center gap-2">
-          {/* Clickable Wallet Balance */}
-          <button
-            onClick={onOpenWithdraw}
-            title="Gusa hapa kutoa pesa"
-            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#080f21] border border-emerald-500/50 text-emerald-400 text-xs font-bold shadow-[0_0_10px_rgba(16,185,129,0.2)] hover:border-emerald-400 hover:bg-[#0c1834] transition-all cursor-pointer active:scale-95"
-          >
-            <Wallet className="w-3.5 h-3.5 text-emerald-400" />
-            <div className="flex items-center gap-1 text-[11px] sm:text-xs">
-              <span className="text-[10px] text-slate-400 uppercase font-semibold">Balance:</span>
-              <span className="font-mono text-emerald-300 font-extrabold">TZS 0</span>
-              <span className="text-[9px] bg-emerald-950/80 text-emerald-300 px-1 py-0.2 rounded border border-emerald-500/30 ml-0.5">
-                Toa
-              </span>
-            </div>
-          </button>
-
-          {/* Language Selector */}
-          <div className="hidden xs:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#080f21] border border-slate-700/80 text-[11px] font-semibold text-slate-300">
-            <Globe className="w-3 h-3 text-[#00f0ff]" />
-            <span>EN</span>
-          </div>
-        </div>
+        {/* Primary Action: Toa Pesa */}
+        <button
+          onClick={onOpenWithdraw}
+          title="Gusa hapa kutoa pesa"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#ff007a] to-[#e11d48] hover:brightness-110 text-white text-xs sm:text-sm font-bold shadow-md shadow-rose-950/40 transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 min-h-[40px]"
+        >
+          <Wallet className="w-4 h-4" />
+          <span>Toa Pesa</span>
+        </button>
 
       </div>
     </header>

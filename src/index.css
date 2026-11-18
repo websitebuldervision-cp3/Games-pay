@@ -2,10 +2,19 @@
 
 @layer base {
   body {
-    background-color: #080c16;
+    background-color: #030712;
     color: #f1f5f9;
     overflow-x: hidden;
   }
+}
+
+/* Hide scrollbars cleanly for horizontal mobile category strip */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbars */
