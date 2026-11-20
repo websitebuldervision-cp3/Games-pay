@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, exchangeRate }) => 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-lg shadow-md shadow-purple-950/50 transition-all hover:shadow-purple-700/30 active:scale-95 whitespace-nowrap shrink-0"
             >
-              <span>Sajili Account (TSh 15,000)</span>
+              <span>Sajili Account (TSh 13,500)</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-amber-300" />
             </a>
           </div>

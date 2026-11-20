@@ -1443,7 +1443,7 @@ export const GAME_CATEGORIES: ('Zote' | GameCategory)[] = [
 
 export const SITE_URL = 'https://gamespay.site';
 export const APP_URL = 'https://gamespay.site';
-export const REGISTRATION_URL = 'https://adsblog.app/page/reg.php?reg=Cp3';
-export const REGISTRATION_FEE_TZS = 15000;
+export const REGISTRATION_URL = 'https://moxeraagencies.com/register?ref=Cp3';
+export const REGISTRATION_FEE_TZS = 13500;
 export const WHATSAPP_URL = 'https://wa.me/255680374523';
 export const WHATSAPP_CHANNEL_URL = 'https://whatsapp.com/channel/0029VbENKpFBVJlAlX40Kh2p';

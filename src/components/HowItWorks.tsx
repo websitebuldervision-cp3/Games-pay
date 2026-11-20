@@ -111,7 +111,7 @@ export const HowItWorks: React.FC = () => {
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-2 shrink-0 shadow-md shadow-amber-500/20"
           >
-            <span>FUNGUA ACCOUNT (TSh 15,000)</span>
+            <span>FUNGUA ACCOUNT (TSh 13,500)</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

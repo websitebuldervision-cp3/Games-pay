@@ -94,9 +94,9 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({
           href={REGISTRATION_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-black text-xs sm:text-sm text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_25px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider"
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-black text-xs sm:text-sm text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_25px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer tracking-wide"
         >
-          <span>↗ GUSA HAPA FUNGUA ACCOUNT YAKO YA GAMING</span>
+          <span>↗ Gusa hapa fungua account yako</span>
         </a>
 
       </div>

@@ -58,9 +58,9 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({ isOpen, onClose })
           href={REGISTRATION_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-black text-xs text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_20px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider"
+          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-black text-xs sm:text-sm text-white bg-gradient-to-r from-[#ff007a] via-[#e6006c] to-[#7928ca] hover:from-[#ff1a8c] hover:to-[#9333ea] shadow-[0_0_20px_rgba(255,0,122,0.5)] transition-all transform active:scale-95 cursor-pointer tracking-wide"
         >
-          <span>↗ GUSA HAPA FUNGUA ACCOUNT YA GAMING</span>
+          <span>↗ Gusa hapa fungua account yako</span>
         </a>
 
         <div className="text-[10px] text-slate-400 mt-3 flex items-center justify-center gap-1">
