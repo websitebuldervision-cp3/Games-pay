@@ -1,10 +1,60 @@
 @import "tailwindcss";
 
 @layer base {
+  html,
+  body,
+  #root,
+  *,
+  *::before,
+  *::after {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
   body {
     background-color: #030712;
     color: #f1f5f9;
     overflow-x: hidden;
+  }
+
+  /* Keep form controls usable and editable */
+  input,
+  textarea,
+  select,
+  [contenteditable="true"] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
+  }
+
+  /* Disable dragging on images and icons */
+  img,
+  picture,
+  svg {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+}
+
+/* Hide website content when printing is triggered */
+html.content-protection-printing #root {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@media print {
+  html,
+  body,
+  #root,
+  body > * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
 
