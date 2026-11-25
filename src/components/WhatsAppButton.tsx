@@ -62,7 +62,7 @@ export const WhatsAppButton: React.FC = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-xs font-bold text-white group-hover:text-[#00f0ff] leading-snug">
-                  1: Kujiunga na chanel ya GAME PAY
+                  1: Kujiunga na chanel ya TENO PLAY
                 </div>
                 <div className="text-[11px] text-slate-400 mt-0.5 flex items-center gap-1">
                   <span>Gusa hapa kujiunga</span>

@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className="flex items-center justify-center gap-2">
           <Gamepad2 className="w-5 h-5 text-[#00f0ff]" />
           <span className="text-lg font-black tracking-tight text-white">
-            GAMES <span className="text-[#00f0ff]">PAY</span>
+            TENO <span className="text-[#00f0ff]">PLAY</span>
           </span>
           <span className="text-slate-600">·</span>
           <span className="text-xs font-black tracking-widest text-amber-400 uppercase">
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="text-[11px] text-slate-600 font-mono">
-          © {new Date().getFullYear()} GAMES PAY. All rights reserved.
+          © {new Date().getFullYear()} TENO PLAY. All rights reserved.
         </div>
 
       </div>

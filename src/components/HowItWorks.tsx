@@ -50,7 +50,7 @@ export const HowItWorks: React.FC = () => {
             <span>Mchakato Rahisi wa Hatua 4</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Jinsi GAMES PAY Inavyofanya Kazi
+            Jinsi TENO PLAY Inavyofanya Kazi
           </h2>
           <p className="text-sm text-slate-400 mt-2 leading-relaxed">
             Mfumo wa uwazi unaowezesha wachezaji wote kushiriki na kupokea zawadi kwa kuzingatia kanuni na masharti ya uchezaji.

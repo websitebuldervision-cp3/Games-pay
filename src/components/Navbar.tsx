@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, exchangeRate }) => 
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
-                  GAMES <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">PAY</span>
+                  TENO <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">PLAY</span>
                 </span>
                 <span className="text-[10px] font-semibold tracking-widest text-slate-400 uppercase">
                   PLAY • ENJOY • EARN

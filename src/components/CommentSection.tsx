@@ -27,7 +27,7 @@ const DAILY_COMMENT_SETS: Omit<CommentItem, 'id'>[][] = [
     },
     {
       author: 'Grace K.',
-      text: 'Magemu ni rahisi kwenye simu na hayali bando kubwa. Big up GAMES PAY!',
+      text: 'Magemu ni rahisi kwenye simu na hayali bando kubwa. Big up TENO PLAY!',
       time: 'Saa 4 zilizopita',
     },
     {
@@ -76,7 +76,7 @@ const DAILY_COMMENT_SETS: Omit<CommentItem, 'id'>[][] = [
     },
     {
       author: 'Rehema D.',
-      text: 'Nashukuru sana timu ya GAMES PAY, huduma zenu ni za uhakika.',
+      text: 'Nashukuru sana timu ya TENO PLAY, huduma zenu ni za uhakika.',
       time: 'Saa 3 zilizopita',
     },
     {
@@ -140,7 +140,7 @@ const DAILY_COMMENT_SETS: Omit<CommentItem, 'id'>[][] = [
     },
     {
       author: 'Prisca T.',
-      text: 'Hakika GAMES PAY imekuwa mkombozi wangu wa kila wiki.',
+      text: 'Hakika TENO PLAY imekuwa mkombozi wangu wa kila wiki.',
       time: 'Saa 7 zilizopita',
     },
   ],

@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWithdraw }) => {
     if (typeof document !== 'undefined') {
       const link = document.createElement('a');
       link.href = '/GAMES_PAY.apk';
-      link.download = 'GAMES_PAY.apk';
+      link.download = 'TENO_PLAY.apk';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -132,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWithdraw }) => {
 
       {downloadState === 'completed' && (
         <div className="text-[11px] text-emerald-300 font-semibold mb-1.5">
-          ✓ GAMES PAY app downloaded! Open to install.
+          ✓ TENO PLAY app downloaded! Open to install.
         </div>
       )}
 

@@ -13,10 +13,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenWithdraw }) => {
         {/* Brand Wordmark */}
         <a
           href="/"
-          className="flex items-center font-black text-xl sm:text-2xl tracking-tight whitespace-nowrap shrink-0"
+          className="flex items-center gap-1 font-black text-xl sm:text-2xl tracking-tight whitespace-nowrap shrink-0"
         >
-          <span className="text-white">GAMES</span>
-          <span className="text-[#00f0ff]">PAY</span>
+          <span className="text-white">TENO</span>
+          <span className="text-[#00f0ff]">PLAY</span>
         </a>
 
         {/* Primary Action: Toa Pesa */}

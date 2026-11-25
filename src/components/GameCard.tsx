@@ -27,7 +27,7 @@ export const GameCard: React.FC<GameCardProps> = ({
         {!imageError ? (
           <img
             src={game.image}
-            alt={`${game.name} — Cheza na Kulipwa ${game.category} Game Tanzania | GAMES PAY`}
+            alt={`${game.name} — Cheza na Kulipwa ${game.category} Game Tanzania | TENO PLAY`}
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
             loading="lazy"

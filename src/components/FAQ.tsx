@@ -14,7 +14,7 @@ export const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: `Ada ya usajili wa account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} ni ya nini?`,
-      answer: `Ada ya usajili wa account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} inatumika kuwezesha account yako rasmi ya GAMES PAY, kuthibitisha usalama wa mtumiaji, na kukuunganisha kwenye kanzidata rasmi ya AdsBlog chini ya msimbo wa rejea Cp3. Ada hii inalinda jukwaa dhidi ya account feki za roboti na kuhakikisha wachezaji halisi pekee ndio wanaoshiriki.`
+      answer: `Ada ya usajili wa account ya TSh ${formatTZS(REGISTRATION_FEE_TZS)} inatumika kuwezesha account yako rasmi ya TENO PLAY, kuthibitisha usalama wa mtumiaji, na kukuunganisha kwenye kanzidata rasmi ya AdsBlog chini ya msimbo wa rejea Cp3. Ada hii inalinda jukwaa dhidi ya account feki za roboti na kuhakikisha wachezaji halisi pekee ndio wanaoshiriki.`
     },
     {
       question: 'Je, kulipa ada ya usajili kunanihakikishia kupokea fedha bila kucheza?',
@@ -29,7 +29,7 @@ export const FAQ: React.FC = () => {
       answer: 'Baada ya mfumo kuthibitisha ushindi wako, malipo huanza kushughulikiwa na kutumwa ndani ya dakika 5 hadi 15. Utapokea ujumbe mfupi wa SMS kutoka kwa mtandao wako wa simu kuthibitisha muamala.'
     },
     {
-      question: 'Ni nani anayeruhusiwa kujiunga na GAMES PAY?',
+      question: 'Ni nani anayeruhusiwa kujiunga na TENO PLAY?',
       answer: 'Mtu yeyote mwenye simu ya mkononi (smartphone au tablet/kompyuta) na namba inayofanya kazi ya mtandao wa simu wa Tanzania (M-Pesa, Tigo Pesa, HaloPesa, Azam Pesa au Airtel Money) anaweza kujiandikisha na kushiriki.'
     },
     {

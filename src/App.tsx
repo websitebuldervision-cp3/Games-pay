@@ -94,7 +94,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050814] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
       
-      {/* 1. Header with GAMESPAY & Toa Pesa */}
+      {/* 1. Header with TENO PLAY & Toa Pesa */}
       <Header
         onOpenWithdraw={() => setWithdrawModalOpen(true)}
       />
@@ -106,7 +106,7 @@ export default function App() {
         />
 
         {/* 3. Michezo ya Leo + Interactive Category Filter Tabs */}
-        <section className="px-3.5 sm:px-6 max-w-5xl mx-auto pt-1 pb-4" aria-label="Orodha ya Magemu Rasmi ya GAMES PAY">
+        <section className="px-3.5 sm:px-6 max-w-5xl mx-auto pt-1 pb-4" aria-label="Orodha ya Magemu Rasmi ya TENO PLAY">
           <div className="flex items-center gap-2.5 mb-2.5">
             <h2 className="text-sm sm:text-base font-extrabold text-white whitespace-nowrap shrink-0">
               Michezo ya Leo

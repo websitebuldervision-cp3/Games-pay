@@ -17,7 +17,7 @@ export const PaymentNetworks: React.FC = () => {
             Pokea Zawadi Moja kwa Moja Kwenye Simu
           </h2>
           <p className="text-sm text-slate-400 mt-2 leading-relaxed">
-            GAMES PAY inaunganishwa na mitandao yote 5 mikubwa ya mawasiliano nchini Tanzania kuhakikisha unapokea fedha zako kwa haraka na usalama.
+            TENO PLAY inaunganishwa na mitandao yote 5 mikubwa ya mawasiliano nchini Tanzania kuhakikisha unapokea fedha zako kwa haraka na usalama.
           </p>
         </div>
 

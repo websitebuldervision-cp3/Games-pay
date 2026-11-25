@@ -26,7 +26,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('GAMES PAY ErrorBoundary caught:', error, errorInfo);
+    console.error('TENO PLAY ErrorBoundary caught:', error, errorInfo);
   }
 
   render() {
@@ -45,7 +45,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
           textAlign: 'center'
         }}>
           <h1 style={{ fontSize: '28px', fontWeight: 900, color: '#00f0ff', marginBottom: '8px' }}>
-            GAMES PAY
+            TENO PLAY
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '24px', maxWidth: '360px' }}>
             Kuna changamoto ya kupakia ukurasa. Bonyeza kitufe hapa chini ili kufungua tena:
