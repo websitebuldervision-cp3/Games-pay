@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
-import { REGISTRATION_FEE_TZS, WHATSAPP_URL } from '../data/games';
+import { REGISTRATION_FEE_TZS, CUSTOMER_CARE_SMS_URL, CUSTOMER_CARE_PHONE } from '../data/games';
 import { formatTZS } from '../utils/date';
 
 interface FAQItem {
@@ -34,7 +34,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: 'Nikipata changamoto au kuchelewa kwa malipo, nitapataje msaada?',
-      answer: 'Tuna timu maalum ya Huduma kwa Wateja (Customer Care) inayopatikana masaa 24/7 kupitia WhatsApp kwa namba +255 610 664 840. Unaweza kugusa kitufe cha kijani cha WhatsApp kilichopo kona ya chini ya skrini wakati wowote kupata usaidizi wa haraka.'
+      answer: `Tuna timu maalum ya Huduma kwa Wateja (Customer Care) inayopatikana kwa SMS ya kawaida kupitia namba ${CUSTOMER_CARE_PHONE}. Unaweza kugusa kitufe cha Customer Care kilichopo kona ya chini ya skrini wakati wowote kupata usaidizi wa haraka.`
     }
   ];
 
@@ -93,20 +93,18 @@ export const FAQ: React.FC = () => {
           })}
         </div>
 
-        {/* WhatsApp Customer Care Prompt */}
+        {/* SMS Customer Care Prompt */}
         <div className="mt-8 text-center p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
             <div className="text-xs font-bold text-white">Bado una swali ambalo halijajibiwa?</div>
-            <div className="text-[11px] text-slate-400">Timu yetu iko tayari kukusaidia kupitia WhatsApp.</div>
+            <div className="text-[11px] text-slate-400">Timu yetu iko tayari kukusaidia kwa SMS ya kawaida ({CUSTOMER_CARE_PHONE}).</div>
           </div>
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={CUSTOMER_CARE_SMS_URL}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shrink-0"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
-            <span>Ongea Nasi WhatsApp</span>
+            <span>Tuma SMS Customer Care</span>
           </a>
         </div>
 

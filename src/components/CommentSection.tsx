@@ -32,7 +32,7 @@ const DAILY_COMMENT_SETS: Omit<CommentItem, 'id'>[][] = [
     },
     {
       author: 'Kelvin S.',
-      text: 'Customer care wao wa WhatsApp wanajibu kwa wakati ukihitaji msaada.',
+      text: 'Customer care wao wanajibu SMS kwa wakati ukihitaji msaada.',
       time: 'Saa 6 zilizopita',
     },
   ],

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Gamepad2 } from 'lucide-react';
-import { REGISTRATION_URL, WHATSAPP_URL, WHATSAPP_CHANNEL_URL } from '../data/games';
+import { REGISTRATION_URL, CUSTOMER_CARE_SMS_URL, CUSTOMER_CARE_PHONE, WHATSAPP_CHANNEL_URL } from '../data/games';
 
 export const Footer: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
           Powered by <span className="text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">Cp3 👑</span>
         </div>
 
-        {/* Links including WhatsApp Channel */}
+        {/* Links including Customer Care SMS and Channel */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs text-slate-400">
           <a
             href={REGISTRATION_URL}
@@ -36,12 +36,10 @@ export const Footer: React.FC = () => {
           </a>
           <span>·</span>
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={CUSTOMER_CARE_SMS_URL}
             className="hover:text-emerald-400 transition-colors"
           >
-            Customer Care WhatsApp
+            Customer Care SMS ({CUSTOMER_CARE_PHONE})
           </a>
           <span>·</span>
           <a
