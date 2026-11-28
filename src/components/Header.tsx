@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenWithdraw }) => {
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#050814]/95 backdrop-blur-md border-b border-slate-800/80 px-3.5 sm:px-6 py-2.5">
+    <header className="sticky top-0 z-40 w-full bg-[#12122B]/95 backdrop-blur-md border-b border-slate-800/80 px-3.5 sm:px-6 py-2.5">
       <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
         
         {/* Brand Wordmark */}

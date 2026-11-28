@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, CheckCircle, ArrowDown } from 'lucide-react';
+import { Download, CheckCircle, ArrowDown, TrendingUp } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 
 interface HeroProps {
@@ -104,9 +104,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWithdraw }) => {
 
           <button
             onClick={handleInstallClick}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-[11px] text-white bg-[#101933] hover:bg-[#162347] border border-cyan-500/40 transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider min-h-[34px] ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-[11px] text-white bg-[#101933] hover:bg-[#162347] border border-cyan-500/40 transition-all transform active:scale-95 cursor-pointer uppercase tracking-wider min-h-[34px] ${
               showPointer && isPointerAnimating
-                ? 'ring-2 ring-[#00f0ff] ring-offset-1 ring-offset-[#050814]'
+                ? 'ring-2 ring-[#00f0ff] ring-offset-1 ring-offset-[#12122B]'
                 : ''
             }`}
           >
@@ -141,39 +141,44 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWithdraw }) => {
         Play Games &amp; <span className="text-[#00f0ff]">Get Paid Instantly</span>
       </h1>
 
-      {/* 3. Compact 3-Column Summary Cards */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-3xl mx-auto mb-2">
-        <div className="rounded-xl bg-[#0c1326] border border-slate-800/90 py-2 px-1.5 sm:p-3 flex flex-col items-center justify-center">
-          <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+      {/* 3. Equal-Size 3-Column Single-Row Summary Cards */}
+      <div className="grid grid-cols-3 items-stretch gap-2 sm:gap-3 max-w-3xl mx-auto mb-2">
+        {/* 1. NET PROFIT Card */}
+        <div className="h-full min-w-0 rounded-[16px] bg-[linear-gradient(135deg,#00D084,#00A651)] py-2.5 px-1.5 sm:p-3.5 flex flex-col items-center justify-center gap-1 text-white shadow-md">
+          <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" aria-hidden="true" />
+          <div className="text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-white whitespace-nowrap">
             NET PROFIT
           </div>
-          <div className="text-xs sm:text-base font-extrabold text-white font-mono tabular-nums mt-0.5">
+          <div className="text-xs sm:text-base font-extrabold text-white font-mono tabular-nums whitespace-nowrap">
             TZS 0
           </div>
         </div>
 
-        <div className="rounded-xl bg-[#0f1730] border border-cyan-500/40 py-2 px-1.5 sm:p-3 flex flex-col items-center justify-between gap-1">
-          <div>
-            <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+        {/* 2. BALANCE Card */}
+        <div className="h-full min-w-0 rounded-[16px] bg-[linear-gradient(135deg,#00BFFF,#007BFF)] py-2.5 px-1.5 sm:p-3.5 flex flex-col items-center justify-between gap-1.5 text-white shadow-md">
+          <div className="flex flex-col items-center">
+            <div className="text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-white whitespace-nowrap">
               BALANCE
             </div>
-            <div className="text-xs sm:text-base font-extrabold text-[#00f0ff] font-mono tabular-nums">
+            <div className="text-xs sm:text-base font-extrabold text-white font-mono tabular-nums mt-0.5 whitespace-nowrap">
               TZS 0
             </div>
           </div>
           <button
             onClick={onOpenWithdraw}
-            className="w-full py-1 px-2 rounded-lg bg-gradient-to-r from-[#ff007a] to-[#e11d48] hover:brightness-110 text-white text-[10px] sm:text-xs font-bold transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+            className="w-full py-1.5 px-2 rounded-lg bg-[#000000] hover:bg-neutral-900 text-white text-[10px] sm:text-xs font-bold text-center flex items-center justify-center transition-all active:scale-95 cursor-pointer whitespace-nowrap"
           >
             Toa Pesa
           </button>
         </div>
 
-        <div className="rounded-xl bg-[#0c1326] border border-slate-800/90 py-2 px-1.5 sm:p-3 flex flex-col items-center justify-center">
-          <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+        {/* 3. WITHDRAWAL Card */}
+        <div className="h-full min-w-0 rounded-[16px] bg-[linear-gradient(135deg,#FF9500,#FF3D00)] py-2.5 px-1.5 sm:p-3.5 flex flex-col items-center justify-center gap-1 text-white shadow-md">
+          <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" aria-hidden="true" />
+          <div className="text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-white whitespace-nowrap">
             WITHDRAWAL
           </div>
-          <div className="text-xs sm:text-base font-extrabold text-white font-mono tabular-nums mt-0.5">
+          <div className="text-xs sm:text-base font-extrabold text-white font-mono tabular-nums whitespace-nowrap">
             TZS 0
           </div>
         </div>

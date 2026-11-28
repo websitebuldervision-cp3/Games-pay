@@ -92,7 +92,7 @@ export default function App() {
   }, [activeGames, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-[#050814] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
+    <div className="min-h-screen bg-[#12122B] text-slate-100 flex flex-col pb-16 selection:bg-[#00f0ff] selection:text-black">
       
       {/* 1. Header with TENO PLAY & Toa Pesa */}
       <Header
